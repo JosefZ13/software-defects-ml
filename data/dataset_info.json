@@ -1,0 +1,37 @@
+{
+  "JM1": {
+    "rows": 13204,
+    "columns": 22,
+    "description": "Large dataset from NASA IV&V project. Used for software defect prediction.",
+    "source": "https://github.com/ApoorvaKrisna/NASA-promise-dataset-repository",
+    "file": "JM1.csv"
+  },
+  "KC1": {
+    "rows": 2109,
+    "columns": 22,
+    "description": "C++ project dataset from NASA. Commonly used in defect prediction studies.",
+    "source": "https://github.com/ApoorvaKrisna/NASA-promise-dataset-repository",
+    "file": "KC1.csv"
+  },
+  "KC2": {
+    "rows": 522,
+    "columns": 22,
+    "description": "C-based project dataset. Smaller than KC1.",
+    "source": "https://github.com/ApoorvaKrisna/NASA-promise-dataset-repository",
+    "file": "KC2.csv"
+  },
+  "CM1": {
+    "rows": 505,
+    "columns": 22,
+    "description": "Spacecraft instrument software project from NASA. Small dataset.",
+    "source": "https://github.com/ApoorvaKrisna/NASA-promise-dataset-repository",
+    "file": "CM1.csv"
+  },
+  "PC1": {
+    "rows": 1107,
+    "columns": 22,
+    "description": "NASA flight software dataset. Balanced and compact.",
+    "source": "https://github.com/ApoorvaKrisna/NASA-promise-dataset-repository",
+    "file": "PC1.csv"
+  }
+}
