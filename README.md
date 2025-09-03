@@ -1,26 +1,24 @@
-\# Machine Learning for Software Defect Prediction – Bachelor Thesis
+### Machine Learning For Software defect Prediction
 
 
 
-This repository contains the code, datasets, and analysis for my bachelor thesis:  
-
-\*\*Machine Learning for Software Defect Prediction: A Comparative Study\*\*
+This repository contains the code, datasets, and analysis for my bachelor thesis:
 
 
 
----
+Machine Learning For Software Defect Prediction: A Comparative Study
 
 
 
-\## 📂 Repository Structure
+##### Repository Structure 
 
 
 
 software-defects-ml/
 
-├── data/ # NASA PROMISE datasets (JM1, KC1, KC2, PC1, CM1)
+├── data/ 					# NASA PROMISE datasets (JM1, KC1, KC2, PC1, CM1)
 
-├── notebooks/ # Jupyter notebooks (01–10)
+├── notebooks/ 			# Jupyter notebooks (01–10)
 
 │ ├── 01\_data\_preprocessing.ipynb
 
@@ -42,159 +40,93 @@ software-defects-ml/
 
 │ └── 10\_final\_model\_comparison.ipynb
 
-├── report/ # Thesis report (PDF/Word)
-
-├── presentation/ # PowerPoint presentation
-
 ├── README.md
 
-├── requirements.txt # Python dependencies
+├── requirements.txt 		# Python dependencies
 
 └── .gitignore
 
 
 
+##### Notebooks Overview
 
+| Notebook 				| Description 													|
 
----
+|----------				|-------------													|
 
+| 01\_data\_preprocessing.ipynb 		| Loads datasets (JM1, KC1, KC2, PC1, CM1), cleans and scales features, applies stratified train/test split. 	|
 
+| 02\_basic\_models.ipynb 		| Trains baseline models (Logistic Regression, Random Forest, XGBoost, ANN) without balancing. 			|
 
-\## 📊 Pipeline Overview
+| 03\_smote\_and\_boosting.ipynb		| Applies SMOTE to balance classes, retrains models, compares performance before/after. 			|		
 
+| 04\_ann.ipynb 				| Focus on Artificial Neural Networks (MLP), performance evaluation, sensitivity to class imbalance. 		|
 
+| 05\_kc1\_experiments.ipynb		| Dataset-specific experiments on KC1 with visualizations and comparisons. 					|
 
-The project follows a step-by-step machine learning pipeline:
+| 06\_curves.ipynb			| Generates ROC and Precision–Recall curves for all models. 							|
 
+| 07\_error\_analysis.ipynb		| Analyzes false positives/negatives, provides error breakdown. 						|
 
+| 08\_Hyperparameter\_Tuning.ipynb 	| Performs hyperparameter tuning (e.g. GridSearchCV) to optimize models. 					|
 
-1\. \*\*Data Preprocessing\*\* → cleaning, scaling, stratified train/test splits  
+| 09\_NTuning\_vs\_Tuning.ipynb 		| Compares models with default parameters vs tuned models. 							|
 
-2\. \*\*Basic Models\*\* → Logistic Regression, Random Forest, XGBoost, ANN  
-
-3\. \*\*SMOTE and Boosting\*\* → handling class imbalance  
-
-4\. \*\*Artificial Neural Network\*\* → ANN performance evaluation  
-
-5\. \*\*KC1 Experiments\*\* → dataset-specific experiments  
-
-6\. \*\*Curves\*\* → ROC and Precision-Recall visualization  
-
-7\. \*\*Error Analysis\*\* → FP/FN breakdowns  
-
-8\. \*\*Hyperparameter Tuning\*\* → parameter optimization  
-
-9\. \*\*Normal vs Tuned Models\*\* → comparison of performance  
-
-10\. \*\*Final Model Comparison\*\* → summary across all datasets
+| 10\_final\_model\_comparison.ipynb 	| Summarizes results across datasets and models, provides final comparison and insights. 			|
 
 
 
----
+###### Setup Instructions:
 
 
 
-\## ⚙️ Setup Instructions
+1\. Install dependencies
 
-
-
-\### 1. Install dependencies
-
-```bash
-
-pip install -r requirements.txt
-
-
+&nbsp;	pip install -r requirements.txt
 
 2\. Start Jupyter
 
-
-
-jupyter lab
-
-
+&nbsp;	jupyter lab
 
 3\. Run the notebooks
 
-
-
-Open the notebooks in /notebooks and run the cells in order.
-
-Example (Random Forest with and without SMOTE):
+&nbsp;	Open the notebooks in "/notebooks" and run the cells in order.
 
 
 
-&nbsp;   Shows class distribution
+##### Key Evaluation Metrics
 
 
 
-&nbsp;   Applies stratified split
+Accuracy -> overall correctness
+
+Precision -> how many predicted defects are truly defects
+
+Recall (Sensitivity) -> how many actual defects were found
+
+F1-score -> balance of precision and recall
+
+AUC -> ability to distinguish classes
 
 
 
-&nbsp;   Runs baseline RF
+Notes for Confusion Matrix
 
 
 
-&nbsp;   Applies SMOTE
+True Positive (TP): Predicted defect and it was a defect
+
+False Positive (FP): Predicted defect was clean 
+
+False Negative (FN): Predicted clean but it was a defect
+
+True Negative (TN): Predicted clean and it was clean
 
 
 
-&nbsp;   Compares results with confusion matrix, ROC and PR curves
+Author
 
+Josef Ziada 
 
-
-📈 Key Evaluation Metrics
-
-
-
-&nbsp;   Accuracy → overall correctness
-
-
-
-&nbsp;   Precision → how many predicted defects are truly defects
-
-
-
-&nbsp;   Recall (Sensitivity) → how many actual defects were found
-
-
-
-&nbsp;   F1-score → balance of precision and recall
-
-
-
-&nbsp;   AUC → ability to distinguish classes
-
-
-
-💡 Notes for Confusion Matrix (for examiners)
-
-
-
-&nbsp;   True Positive (TP): Predicted defect and it was a defect ✅
-
-
-
-&nbsp;   False Positive (FP): Predicted defect but it was clean (extra QA effort) ⚠️
-
-
-
-&nbsp;   False Negative (FN): Predicted clean but it was a defect (worst case – missed bug) ❌
-
-
-
-&nbsp;   True Negative (TN): Predicted clean and it was clean ✅
-
-
-
-👉 In defect prediction, recall (catching more defects) is often prioritized to reduce FN.
-
-🙋 Author
-
-
-
-Josef Ziada
-
-Bachelor Thesis – University West, 2025
+Bachelor Thesis - University West ,  2025
 
